@@ -1,140 +1,123 @@
-# MyZap - Free Open Source Whatsapp Api
+# OneBot - Simple Bot for WhatsApp with many functions
 
-[![Video explicativo do projeto](https://img.youtube.com/vi/blOpjAS1Fik/0.jpg)](https://www.youtube.com/watch?v=blOpjAS1Fik)
+Este projeto usa como base o [MyZap](https://github.com/billbarsch/myzap) e outros projetos OpenSource;
 
+## Como instalar
 
-[Grupo do Whatsapp: Link para o nosso grupo para tirar dúvidas e nos ajudarmos (clique aqui)](https://chat.whatsapp.com/DMehlYDcMWiKmlIsOLGAQM)
+Este projeto foi testado no Debian 9 e Ubuntu 18
 
+`sudo apt install -y git`
 
+`cd /root`
 
-Este projeto usa como base o [Venom-bot](https://github.com/orkestral/venom) ou o [WPPCONNECT](https://github.com/wppconnect-team/wppconnect), um navegador virtual sem interface gráfica que abre o whatsapp web e executa todos os comandos via código possibilitando assim a automação de todas as funções.
+`git clone onebot`
 
-## Setup
+Instalando dependências:
 
-`sudo apt install -y curl nano gconf-service libasound2 libatk1.0-0 libc6 libcairo2 libcups2 libdbus-1-3 libexpat1 libfontconfig1 libgcc1 libgconf-2-4 libgdk-pixbuf2.0-0 libglib2.0-0 libgtk-3-0 libnspr4 libpango-1.0-0 libpangocairo-1.0-0 libstdc++6 libx11-6 libx11-xcb1 libxcb1 libxcomposite1 libxcursor1 libxdamage1 libxext6 libxfixes3 libxi6 libxrandr2 libxrender1 libxss1 libxtst6 ca-certificates fonts-liberation libappindicator1 libnss3 lsb-release xdg-utils wget build-essential apt-transport-https libgbm-dev`
-- para instalar todas as dependencias necessárias no sistema
+`cd /root/onebot`
 
-`curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -`
+`./install_dep`
 
-`sudo apt install -y git nodejs`
-- para instalar git, nodejs
-
-`git clone https://github.com/billbarsch/myzap.git`
-
-`cd myzap`
-
-`npm install`
-
-`cp .env-example .env`
-```
-Dentro do arquivo .env:
-Para usar o venom como motor use a variavel:
-ENGINE=VENOM
-Para usar o WPPCONNECT como motor use a variavel:
-ENGINE=WPPCONNECT
-```
-
-### Start server
+Caso você tenha problemas para instalar as dependências pelo script,instale manualmente:
 
 `node index.js`
 
-### keep processes alive at every server restart
+`sudo apt update;`
 
-`npm install -y pm2 -g`
+`sudo apt-get install software-properties-common -y;`
 
-`pm2 start index.js`
+`wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | sudo apt-key add -;`
 
-`pm2 startup`
+`wget -q https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash;`
 
-## Usage
+`sudo sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list';`
 
-### Start new whatsapp session
+`cd /root;`
 
-`http://localhost:3333/start?sessionName=session1`
+`source ~/.bashrc;`
 
-### Get QRCode (quickly!!)
+`sudo apt update;`
 
-`http://localhost:3333/qrcode?sessionName=session1&image=true`
-- png
+`sudo apt install npm;`
 
-`http://localhost:3333/qrcode?sessionName=session1`
-- json (base64)
+`sudo apt install nodejs;`
 
-### Send message (POST method)
+`nvm install 16.4.2;`
 
-```javascript
-(async () => {
-  const response = await fetch('http://localhost:3333/sendText', {
-    method: 'POST',
-    headers: {
-      'Accept': 'application/json',
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify(
-        {
-            sessionName: "session1", 
-            number: '556334140378',
-            text:"Hello\nWorld"
-        }
-    )
-  });
-  const content = await response.json();
+`sudo apt install -y curl nano crontab nano graphicsmagick gconf-service libasound2 libatk1.0-0 libc6 libcairo2 libcups2 libdbus-1-3 libexpat1 libfontconfig1 libgcc1 libgconf-2-4 libgdk-pixbuf2.0-0 libglib2.0-0 libgtk-3-0 libnspr4 libpango-1.0-0 libpangocairo-1.0-0 libstdc++6 libx11-6 libx11-xcb1 libxcb1 libxcomposite1 libxcursor1 libxdamage1 libxext6 libxfixes3 libxi6 libxrandr2 libxrender1 libxss1 libxtst6 ca-certificates fonts-liberation libappindicator1 libnss3 lsb-release xdg-utils wget build-essential apt-transport-https libgbm-dev -y;`
 
-  console.log(content);
-})();  
-```
+`curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -;`
 
-### Send File (POST method)
+`sudo apt install google-chrome-stable -y;`
 
-```javascript
-(async () => {
-    const response = await fetch('http://localhost:3333/sendFile', {
-    method: 'POST',
-    headers: {
-      'Accept': 'application/json',
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify(
-        {
-            sessionName: "session1", 
-            number: '556334140378',
-            base64Data:"44696d61", //hexadecimal
-            fileName:"test.txt",
-            caption: "Document" //optional
-        }
-    )
-  });
-  const content = await response.json();
+`sudo apt install ffmpeg -y;`
 
-  console.log(content);
-})();  
-```
+`cd /root/onebot;`
 
-### Close whatsapp session
+`mkdir media_cache;`
 
-`http://localhost:3333/close?sessionName=session1`
+`cd /root/onebot/scripts &&`
+
+`chmod +x login;`
+
+`chmod +x restartbot;`
+
+`chmod +x sendreq;`
+
+`chmod +x startbot;`
+
+`chmod +x stopbot;`
+
+### Iniciar sessão pela primeira vez
+
+Por padrão,a sessão está com o nome de "my_session_1",você pode alterar,ou adicionar mais sessões,
+porém lembre de editar o(s) nome(s) da(s) mesma(s) nos scripts no diretório /root/onebot/scripts;
+
+Também por padrão,a porta usada é a "3333",certifique-se que a mesma esteja aberta em seu servidor;
+
+`cd /root/onebot/scripts && ./login`
+
+Em um navegador,acenda o seguinte endereço para iniciar a sessão:
+
+`http://seu_ip:3333/start?sessionName=my_session_1`
+
+*Seu IP: IP ou domínio de seu servidor
+
+Agora no terminal,aponte seu telefone para ler o QR Code gerado,ao final deve aparecer algo como "Connected"
+
+### Iniciar sessão depois do primeiro login
+
+Para rodar em segundo plano,o script usa o screen para deixar o OneBot ativo,para iniciar ele,rode o seguinte comando:
+
+`cd /root/onebot/scripts && ./startbot`
+
+Ou se preferir,pode rodar manualmente,sem ser pela Screen
+
+`cd /root/onebot/scripts && ./login`
+
+ou
+
+`cd /root/onebot && node index.js`
+
+### Fechar sessão(parar bot)
+
+`cd /root/onebot/scripts && ./stopbot`
+
+### Deletar sessão
+
+Por padrão os tokens da sessão são salvo em "/root/onebot/tokens",para remover use:
+
+`cd /root/onebot && rm -rf tokens`
+
+### Algumas ressalvas
+
+Em nossos testes o bot parou de funcionar as vezes(fechou a screen),não sabemos o real motivo disso;
+
+É necessário que o dispostivo usado esteja conectado à internet para correto funcionamento do bot;
+
+A função de fazer stickers animados pode não funcionar com algumas mídias,não sabemos ainda o que causa isso;
+
+A função de baixar vídeos e aúdios do YouTube pode não apagar á mídia enviada ao usuário do servidor (pasta "media_cache" em "root/onebot"),
+verifique e apague manualmente para não acumular lixo em sua máquina
 
 
-## Salvar token do venom na nuvem (jsonbin.io) (opcional)
- - Crie uma conta grátis no https://jsonbin.io/ 
- - Crie um novo "bin" (objeto json) com quaisquer dados e copie o id dele e coloque no arquivo .env
- - Copie também o seu token de acesso à api do jsonbin.io e coloque no arquivo .env
-
-```
-...
-JSONBINIO_BIN_ID=23452345345 <- deixar em branco caso não queira usar essa opção do jsonbin.io 
-JSONBINIO_SECRET_KEY=345234532452452345243 <- deixar em branco caso não queira usar essa opção do jsonbin.io
-...
-```
-
- - com esses dados o myzap irá gravar o token na nuvem e poderá ser executado em várias instancias diferentes por exemplo no Gooogle Cloud Run
-
-## To install certbot and create ssl certificate to https domains:
-
-`sudo apt-get update && sudo apt-get install -y software-properties-common`
-
-`sudo add-apt-repository universe && sudo add-apt-repository ppa:certbot/certbot`
-
-`sudo apt-get update && sudo apt-get install -y certbot`
-
-`sudo certbot certonly --manual --force-renewal -d *.yourdomain.net -d yourdomain.net --agree-tos --no-bootstrap --manual-public-ip-logging-ok --preferred-challenges dns-01 --server https://acme-v02.api.letsencrypt.org/directory`
