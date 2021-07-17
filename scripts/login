@@ -1,0 +1,6 @@
+#!/bin/bash
+clear
+cd /root/onebot;
+nvm install 16.4.2;
+node index.js;
+
