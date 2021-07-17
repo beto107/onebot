@@ -1,0 +1,10 @@
+#!/bin/bash
+clear
+cd /root/onebot/scripts &&
+curl http://127.0.0.1:3333/close?sessionName=my_session_1
+sleep 10
+screen -ls | grep whatsbot | cut -d. -f1 | awk '{print $1}' | xargs kill
+kill -9 $(lsof -t -i:3333)
+sleep 5
+./startbot
+

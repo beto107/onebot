@@ -1,0 +1,3 @@
+#!/bin/bash
+curl http://127.0.0.1:3333/close?sessionName=my_session_1;
+kill -9 $(lsof -t -i:3333);

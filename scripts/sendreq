@@ -1,0 +1,5 @@
+#!/bin/bash
+clear && curl --header "Content-Type: application/json" \
+  --request POST \
+  --data '{"sessionName" : "my_session_1","number":"seu_numero","text" : "Hello World"}' \
+  http://127.0.0.1:3333/sendText
