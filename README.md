@@ -10,7 +10,7 @@ Este projeto foi testado no Debian 9 e Ubuntu 18
 
 `cd /root`
 
-`git clone onebot`
+`git clone https://github.com/Andley302/onebot.git`
 
 Instalando dependências:
 
