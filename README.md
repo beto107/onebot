@@ -6,6 +6,8 @@ Este projeto usa como base o [MyZap](https://github.com/billbarsch/myzap) e outr
 
 Este projeto foi testado no Debian 9 e Ubuntu 18
 
+`sudo apt update;`
+
 `sudo apt install -y git`
 
 `cd /root`
@@ -21,10 +23,6 @@ Instalando dependências:
 `./install_dep.sh`
 
 Caso você tenha problemas para instalar as dependências pelo script,instale manualmente:
-
-`node index.js`
-
-`sudo apt update;`
 
 `sudo apt-get install software-properties-common -y;`
 
