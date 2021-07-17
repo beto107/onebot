@@ -73,7 +73,7 @@ Caso você tenha problemas para instalar as dependências pelo script,instale ma
 
 ### Instalar dependências do NPM
 
-`wget -q https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash install.sh;`
+`wget -q https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash install;`
 
 `source ~/.bashrc;`
 
