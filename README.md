@@ -80,7 +80,7 @@ porém lembre de editar o(s) nome(s) da(s) mesma(s) nos scripts no diretório /r
 
 Também por padrão,a porta usada é a "3333",certifique-se que a mesma esteja aberta em seu servidor;
 
-`cd /root/onebot/scripts && ./login`
+`cd /root/onebot && ./login`
 
 Em um navegador,acenda o seguinte endereço para iniciar a sessão:
 
@@ -94,11 +94,11 @@ Agora no terminal,aponte seu telefone para ler o QR Code gerado,ao final deve ap
 
 Para rodar em segundo plano,o script usa o screen para deixar o OneBot ativo,para iniciar ele,rode o seguinte comando:
 
-`cd /root/onebot/scripts && ./startbot`
+`cd /root/onebot && ./startbot`
 
 Ou se preferir,pode rodar manualmente,sem ser pela Screen
 
-`cd /root/onebot/scripts && ./login`
+`cd /root/onebot && ./login`
 
 ou
 
