@@ -114,6 +114,18 @@ Por padrão os tokens da sessão são salvo em "/root/onebot/tokens",para remove
 
 `cd /root/onebot && rm -rf tokens`
 
+### Funções disponíveis no momento
+
+Pesquisa na Wikipédia;
+Pesquisa no Brainly;
+Fazer sticker com imagem;
+Fazer sticker animado com vídeo ou gif;
+Download de aúdio(MP3) e vídeo (MP4) do YouTube;
+Consulta de rastreio de pacote dos correios(Obs.:Apenas consulta,não salva o pacote);
+Ver previsão do tempo para uma cidade;
+
+/comandos > Mostra todos comandos dispoíveis no bot
+
 ### Algumas ressalvas
 
 Em nossos testes o bot parou de funcionar as vezes(fechou a screen),não sabemos o real motivo disso;
