@@ -68,6 +68,10 @@ Caso você tenha problemas para instalar as dependências pelo script,instale ma
 
 `chmod +x stopbot;`
 
+### Instalar dependências do NPM
+
+`cd /root/onebot && npm install`
+
 ### Iniciar sessão pela primeira vez
 
 Por padrão,a sessão está com o nome de "my_session_1",você pode alterar,ou adicionar mais sessões,
