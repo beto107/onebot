@@ -16,9 +16,9 @@ Instalando dependências:
 
 `cd /root/onebot`
 
-`chmod +x install_dep`
+`chmod +x install_dep.sh`
 
-`./install_dep`
+`./install_dep.sh`
 
 Caso você tenha problemas para instalar as dependências pelo script,instale manualmente:
 
