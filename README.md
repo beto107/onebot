@@ -32,14 +32,6 @@ Caso você tenha problemas para instalar as dependências pelo script,instale ma
 
 `cd /root;`
 
-`wget -q https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh`
-
-`bash install.sh;`
-
-`source ~/.bashrc;`
-
-`nvm install 16.4.2;`
-
 `sudo apt update;`
 
 `sudo apt install npm;`
