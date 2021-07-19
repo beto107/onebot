@@ -118,6 +118,16 @@ Por padrão os tokens da sessão são salvo em "/root/onebot/tokens",para remove
 
 `cd /root/onebot && rm -rf tokens`
 
+### Fix Brainly search
+
+A função de pesquisa no Brainly pode ter um bug de "Arquivo não encontrado",para corrigir:
+
+Edite o arquivo _BasePayload.js_ no diretório _/root/onebot/node_modules/brainly-client/src/payloads_
+
+Substitua a linha this._query_ ,deixe da seguinte forma:
+
+`this._query = readFileSync(`/root/onebot/node_modules/brainly-client/src/queries/${this.operation}.graphql`).toString('utf-8')`
+
 ### Funções disponíveis no momento
 
 Pesquisa na Wikipédia;
