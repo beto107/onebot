@@ -126,7 +126,7 @@ Edite o arquivo _BasePayload.js_ no diretório _/root/onebot/node_modules/brainl
 
 Substitua a linha this._query_ ,deixe da seguinte forma:
 
-`this._query = readFileSync(`/root/onebot/node_modules/brainly-client/src/queries/${this.operation}.graphql`).toString('utf-8')`
+this._query = readFileSync(/root/onebot/node_modules/brainly-client/src/queries/${this.operation}.graphql).toString('utf-8');
 
 ### Funções disponíveis no momento
 
