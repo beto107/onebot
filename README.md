@@ -122,7 +122,7 @@ Por padrão os tokens da sessão são salvo em "/root/onebot/tokens",para remove
 ### Funções disponíveis no momento
 
 Pesquisa na Wikipédia;
-Pesquisa no Brainly;
+Pesquisa no Brainly (OFF)!;
 Fazer sticker com imagem;
 Fazer sticker animado com vídeo ou gif;
 Download de aúdio(MP3) e vídeo (MP4) do YouTube;
