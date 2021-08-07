@@ -663,7 +663,9 @@ module.exports = class Sessions {
 			var pergunta = msg_recebida.substring(9);
 			console.log("Pergunta: " + pergunta);
           
-			try {
+			client.reply(message.from, "Função não disponível no momento!" , message.id.toString()).then()
+          
+			/*try {
 			brainly.search(pergunta)
  			 .then(questions => {
   			  const question = questions[0]
@@ -690,7 +692,7 @@ module.exports = class Sessions {
 		
 			}catch (e){
 				client.reply(message.from, 'Não foi possível executar a pesquisa no Brainly :(\n\nTente novamente' , message.id.toString()).then()
-			}
+			}*/
 	     	
 			
 	
